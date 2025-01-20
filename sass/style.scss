@@ -1,0 +1,162 @@
+@forward "andyBell";
+
+:root {
+  --violet: hsl(263, 55%, 52%);
+  --dark-gray-blue: hsl(217, 19%, 35%);
+  --box-shadow: hsl(217, 19%, 75%);
+  --black-blue: hsl(219, 29%, 14%);
+  --light-gray-blue: hsl(210, 46%, 95%);
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 500;
+  background-color: var(--light-gray-blue);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+}
+
+.violet {
+  background: var(--violet);
+}
+
+.dark-grey-blue {
+  background: var(--dark-gray-blue);
+}
+
+.black-blue {
+  background: var(--black-blue);
+}
+
+.bg-white {
+  background: var(--white);
+}
+
+.white-text {
+  color: var(--white);
+}
+
+.dark-text {
+  color: var(--dark-gray-blue);
+}
+
+main {
+  padding-block: 2rem;
+  width: min(95%, 70rem);
+  margin-inline: auto;
+  display: grid;
+  grid-auto-columns: 1fr;
+  gap: 2rem;
+  grid-template-areas:
+    "clifford clifford walters whittle"
+    "harmon abrams  abrams whittle";
+
+  @media screen and (max-width: 1300px) {
+    grid-template-areas:
+      "clifford clifford clifford walters"
+      "harmon harmon abrams abrams"
+      "whittle whittle whittle whittle";
+  }
+
+  @media screen and (max-width: 1000px) {
+    grid-template-areas:
+      "clifford clifford clifford clifford"
+      "walters walters harmon harmon"
+      "abrams abrams abrams abrams"
+      "whittle whittle whittle whittle";
+  }
+  @media screen and (max-width: 500px) {
+    grid-template-areas:
+      "clifford clifford clifford clifford"
+      "walters walters walters walters"
+      "harmon harmon harmon harmon"
+      "abrams abrams abrams abrams"
+      "whittle whittle whittle whittle";
+  }
+
+  .card {
+    font-size: 0.8rem;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0.5rem 0.75rem 0.5rem var(--box-shadow);
+
+    &:nth-child(1) {
+      grid-area: clifford;
+    }
+
+    &:nth-child(2) {
+      grid-area: walters;
+    }
+
+    &:nth-child(3) {
+      grid-area: harmon;
+    }
+
+    &:nth-child(4) {
+      grid-area: abrams;
+    }
+
+    &:nth-child(5) {
+      grid-area: whittle;
+    }
+
+    &.quote {
+      background-image: url("./images/bg-pattern-quotation.svg");
+      background-repeat: no-repeat;
+      background-position: top right 10%;
+    }
+
+    p {
+      &:not(.verified) {
+        margin-top: 1rem;
+      }
+      &.headline {
+        font-size: 1.25rem;
+        line-height: 1.2;
+      }
+
+      &.thoughts {
+        opacity: 0.7;
+      }
+    }
+
+    .card-name {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+
+      .name {
+        font-size: 0.9rem;
+        white-space: nowrap;
+      }
+
+      .verified {
+        font-size: 0.7rem;
+        opacity: 0.5;
+        line-height: 0.7;
+      }
+
+      img {
+        width: 3rem;
+        aspect-ratio: 1;
+        border-radius: 50%;
+      }
+    }
+  }
+}

@@ -1,0 +1,211 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+:root {
+  --violet: hsl(263, 55%, 52%);
+  --dark-gray-blue: hsl(217, 19%, 35%);
+  --box-shadow: hsl(217, 19%, 75%);
+  --black-blue: hsl(219, 29%, 14%);
+  --light-gray-blue: hsl(210, 46%, 95%);
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 500;
+  background-color: var(--light-gray-blue);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+}
+
+.violet {
+  background: var(--violet);
+}
+
+.dark-grey-blue {
+  background: var(--dark-gray-blue);
+}
+
+.black-blue {
+  background: var(--black-blue);
+}
+
+.bg-white {
+  background: var(--white);
+}
+
+.white-text {
+  color: var(--white);
+}
+
+.dark-text {
+  color: var(--dark-gray-blue);
+}
+
+main {
+  padding-block: 2rem;
+  width: min(95%, 70rem);
+  margin-inline: auto;
+  display: grid;
+  grid-auto-columns: 1fr;
+  gap: 2rem;
+  grid-template-areas: "clifford clifford walters whittle" "harmon abrams  abrams whittle";
+}
+@media screen and (max-width: 1300px) {
+  main {
+    grid-template-areas: "clifford clifford clifford walters" "harmon harmon abrams abrams" "whittle whittle whittle whittle";
+  }
+}
+@media screen and (max-width: 1000px) {
+  main {
+    grid-template-areas: "clifford clifford clifford clifford" "walters walters harmon harmon" "abrams abrams abrams abrams" "whittle whittle whittle whittle";
+  }
+}
+@media screen and (max-width: 500px) {
+  main {
+    grid-template-areas: "clifford clifford clifford clifford" "walters walters walters walters" "harmon harmon harmon harmon" "abrams abrams abrams abrams" "whittle whittle whittle whittle";
+  }
+}
+main .card {
+  font-size: 0.8rem;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0.5rem 0.75rem 0.5rem var(--box-shadow);
+}
+main .card:nth-child(1) {
+  grid-area: clifford;
+}
+main .card:nth-child(2) {
+  grid-area: walters;
+}
+main .card:nth-child(3) {
+  grid-area: harmon;
+}
+main .card:nth-child(4) {
+  grid-area: abrams;
+}
+main .card:nth-child(5) {
+  grid-area: whittle;
+}
+main .card.quote {
+  background-image: url("./images/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-position: top right 10%;
+}
+main .card p:not(.verified) {
+  margin-top: 1rem;
+}
+main .card p.headline {
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+main .card p.thoughts {
+  opacity: 0.7;
+}
+main .card .card-name {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+main .card .card-name .name {
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+main .card .card-name .verified {
+  font-size: 0.7rem;
+  opacity: 0.5;
+  line-height: 0.7;
+}
+main .card .card-name img {
+  width: 3rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+/*# sourceMappingURL=style.css.map */
