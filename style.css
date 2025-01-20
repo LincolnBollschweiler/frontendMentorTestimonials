@@ -74,7 +74,7 @@ select {
 :root {
   --violet: hsl(263, 55%, 52%);
   --dark-gray-blue: hsl(217, 19%, 35%);
-  --box-shadow: hsl(217, 19%, 75%);
+  --box-shadow: hsl(217, 19%, 80%);
   --black-blue: hsl(219, 29%, 14%);
   --light-gray-blue: hsl(210, 46%, 95%);
   --white: hsl(0, 0%, 100%);
@@ -156,6 +156,10 @@ main .card {
   font-size: 0.8rem;
   padding: 2rem;
   border-radius: 0.5rem;
+  transition: box-shadow 200ms ease-in-out, translate 200ms ease-in-out;
+}
+main .card:hover {
+  translate: -0.3rem -0.3rem;
   box-shadow: 0.5rem 0.75rem 0.5rem var(--box-shadow);
 }
 main .card:nth-child(1) {
